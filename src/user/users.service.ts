@@ -1,10 +1,7 @@
-import {
-  Injectable,
-  NotFoundException,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUserDto } from './DTO/create_user_dto';
 import { UpdateUserDto } from './DTO/update_user_dto';
+import { User, UserRole } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
@@ -63,24 +60,4 @@ export class UsersService {
     }
     return undefined;
   }
-}
-
-export class User {
-  public constructor(id, name, email, role) {
-    this.id = id;
-    this.name = name;
-    this.email = email;
-    this.role = role;
-  }
-
-  id: number;
-  name: string;
-  email: string;
-  role: UserRole;
-}
-
-export enum UserRole {
-  ADMIN = 'ADMIN',
-  ENGINEER = 'ENGINEER',
-  INTERN = 'INTERN',
 }

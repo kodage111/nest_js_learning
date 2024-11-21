@@ -4,16 +4,16 @@ import {
   Delete,
   Get,
   Param,
-  ParseEnumPipe,
   ParseIntPipe,
   Patch,
   Post,
   Query,
   ValidationPipe,
 } from '@nestjs/common';
-import { UserRole, UsersService } from './users.service';
+import { UsersService } from './users.service';
 import { UpdateUserDto } from './DTO/update_user_dto';
 import { CreateUserDto } from './DTO/create_user_dto';
+import { UserRole } from './entities/user.entity';
 
 @Controller('users')
 export class UsersController {
